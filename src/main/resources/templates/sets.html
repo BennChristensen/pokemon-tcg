@@ -1,0 +1,21 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="eg">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pokemon Sets</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+	<div th:each="pokemonSet : ${PokemonSets}">
+		<a th:href="@{cards(set=${pokemonSet.code})}">
+			<div>
+				<figure>
+					<img th:src="${pokemonSet.logoUrl}" />
+					<figcaption th:text="${pokemonSet.name}"></figcaption>
+				</figure>
+			</div>
+		</a>
+	</div>
+</body>
+</html>
